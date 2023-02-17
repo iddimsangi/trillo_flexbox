@@ -5,13 +5,15 @@
   height: 90vh;
   box-shadow: 0 1rem 2rem rgba(#000, 0.3);
   &_header {
-    padding: 2rem;
+    // padding: 2rem;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     &_logo {
       height: 5rem;
       width: 5rem;
+      margin-left: 2rem;
     }
   }
 
@@ -30,15 +32,16 @@
   }
 }
 .search {
-  background-color: greenyellow;
+  //   background-color: greenyellow;
   display: flex;
   flex: 0 0 40%;
   align-items: center;
+  justify-content: center;
 
   &_inpt {
     width: 90%;
     margin-right: -3.2rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 5rem;
     font-family: inherit;
     font-size: inherit;
@@ -49,7 +52,7 @@
     &::-webkit-input-placeholder {
       font-size: inherit;
       font-weight: 300;
-      color: var(--Grey_light-4);
+      color: var(--Grey_dark-3);
     }
     &:focus {
       width: 100%;
@@ -63,37 +66,56 @@
     &--icon-small {
       height: 1.8rem;
       width: 1.8rem;
-      fill: var(--Grey_light-4);
+      fill: var(--Grey_dark-2);
     }
   }
 }
 .header_notifications {
-  background-color: hotpink;
+  // background-color: hotpink;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-self: stretch;
+  height: 100%;
+  & > *{
+    padding:.5rem 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:hover{
+        background-color: var(--Grey_light-3);
+        cursor: pointer;
+    }
+  }
+  &--icon{
+    height: 1.75rem;
+    width: 1.75rem;
+    fill:  var(--Grey_dark-1);
+  }
   &--dp {
     border-radius: 50%;
-    margin-right: 1rem;
-  }
+    margin-right: .5rem;
+  } 
   &--notifications {
     // position: relative;
     display: flex;
     justify-content: space-between;
     & span {
-      // position: absolute;
-      font-size: 1 0.5rem;
-      border: 1px solid red;
+      position: absolute;
+      color: #fff;
+      font-size: 1.4rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: red;
+      border-radius: 50%;
+      text-align: center;
+      top:2rem;
+      left: 1.75rem;
+      
     }
   }
-}
-.icon-small {
-  height: 1.5rem;
-  width: 1.5rem;
 }
 .header_notifications {
   display: flex;
   &--dp {
-    height: 7rem;
+    height: 6.5rem;
   }
 }
