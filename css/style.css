@@ -54,11 +54,48 @@ body {
     display: flex;
     height: 80vh; }
     .container_main--sidebar {
-      background-color: green;
-      width: 20%; }
+      background-color: var(--Grey_dark-1);
+      flex: 0 0 20%; }
+      .container_main--sidebar .side-nav {
+        color: var(--Grey_light-4);
+        list-style: none;
+        margin-top: 4rem; }
+        .container_main--sidebar .side-nav--item {
+          margin-bottom: 0.5rem;
+          position: relative; }
+        .container_main--sidebar .side-nav--link:link, .container_main--sidebar .side-nav--link:visited {
+          text-decoration: none;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          padding: 1rem 1.8rem;
+          font-size: inherit;
+          color: currentColor;
+          z-index: 20; }
+        .container_main--sidebar .side-nav--item::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          background-color: var(--Primary);
+          width: 0.5rem;
+          transform: scaleY(0);
+          transition: transform 0.3s, width 0.4s 0.3s;
+          z-index: 10; }
+        .container_main--sidebar .side-nav--item:hover::before {
+          transform: scaleY(1);
+          width: 100%;
+          cursor: pointer; }
+        .container_main--sidebar .side-nav--icon {
+          height: 2rem;
+          width: 2rem;
+          margin-right: 1.5rem;
+          fill: currentColor; }
     .container_main--body {
-      background-color: red;
       flex: 0 0 80%; }
+      .container_main--body .gallary {
+        display: flex; }
+        .container_main--body .gallary-photo {
+          width: 33.3%; }
 
 .search {
   display: flex;
@@ -97,10 +134,11 @@ body {
   align-self: stretch;
   height: 100%; }
   .header_notifications > * {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
-    position: relative; }
+    position: relative;
+    transition: all 0.2s; }
     .header_notifications > *:hover {
       background-color: var(--Grey_light-3);
       cursor: pointer; }
@@ -108,9 +146,13 @@ body {
     height: 1.75rem;
     width: 1.75rem;
     fill: var(--Grey_dark-1); }
+  .header_notifications--user {
+    display: flex;
+    color: var(--Grey_dark-1); }
   .header_notifications--dp {
     border-radius: 50%;
-    margin-right: .5rem; }
+    margin-right: 0.5rem;
+    height: 5.5rem; }
   .header_notifications--notifications {
     display: flex;
     justify-content: space-between; }
@@ -123,10 +165,5 @@ body {
       background-color: red;
       border-radius: 50%;
       text-align: center;
-      top: 2rem;
+      top: 1.5rem;
       left: 1.75rem; }
-
-.header_notifications {
-  display: flex; }
-  .header_notifications--dp {
-    height: 6.5rem; }

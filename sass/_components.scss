@@ -5,7 +5,6 @@
   height: 90vh;
   box-shadow: 0 1rem 2rem rgba(#000, 0.3);
   &_header {
-    // padding: 2rem;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -22,17 +21,66 @@
     display: flex;
     height: 80vh;
     &--sidebar {
-      background-color: green;
-      width: 20%;
+      background-color: var(--Grey_dark-1);
+      flex: 0 0 20%;
+      .side-nav {
+        color: var(--Grey_light-4);
+        list-style: none;
+        margin-top: 4rem;
+        &--item {
+          margin-bottom: 0.5rem;
+          position: relative;
+        }
+        &--link:link,
+        &--link:visited {
+          text-decoration: none;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          padding: 1rem 1.8rem;
+          font-size: inherit;
+          color: currentColor;
+          z-index: 20;
+        }
+        &--item::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          background-color: var(--Primary);
+          width: 0.5rem;
+          transform: scaleY(0);
+          transition: transform 0.3s, width 0.4s 0.3s;
+          z-index: 10;
+        }
+        &--item:hover::before {
+          transform: scaleY(1);
+          width: 100%;
+          cursor: pointer;
+        }
+        &--icon {
+          height: 2rem;
+          width: 2rem;
+          margin-right: 1.5rem;
+          fill: currentColor;
+        }
+      }
     }
     &--body {
-      background-color: red;
+      // background-color: red;
+
       flex: 0 0 80%;
+      .gallary{
+        display: flex;
+        &-photo{
+          width: 33.3%;
+        }
+      }
+   
+
     }
   }
 }
 .search {
-  //   background-color: greenyellow;
   display: flex;
   flex: 0 0 40%;
   align-items: center;
@@ -71,31 +119,35 @@
   }
 }
 .header_notifications {
-  // background-color: hotpink;
   display: flex;
   align-self: stretch;
   height: 100%;
-  & > *{
-    padding:.5rem 1rem;
+  & > * {
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     position: relative;
-    &:hover{
-        background-color: var(--Grey_light-3);
-        cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      background-color: var(--Grey_light-3);
+      cursor: pointer;
     }
   }
-  &--icon{
+  &--icon {
     height: 1.75rem;
     width: 1.75rem;
-    fill:  var(--Grey_dark-1);
+    fill: var(--Grey_dark-1);
+  }
+  &--user {
+    display: flex;
+    color: var(--Grey_dark-1);
   }
   &--dp {
     border-radius: 50%;
-    margin-right: .5rem;
-  } 
+    margin-right: 0.5rem;
+    height: 5.5rem;
+  }
   &--notifications {
-    // position: relative;
     display: flex;
     justify-content: space-between;
     & span {
@@ -107,15 +159,8 @@
       background-color: red;
       border-radius: 50%;
       text-align: center;
-      top:2rem;
+      top: 1.5rem;
       left: 1.75rem;
-      
     }
-  }
-}
-.header_notifications {
-  display: flex;
-  &--dp {
-    height: 6.5rem;
   }
 }
