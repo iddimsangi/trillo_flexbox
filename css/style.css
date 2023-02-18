@@ -71,7 +71,8 @@ body {
           padding: 1rem 1.8rem;
           font-size: inherit;
           color: currentColor;
-          z-index: 20; }
+          z-index: 20;
+          position: relative; }
         .container_main--sidebar .side-nav--item::before {
           content: "";
           position: absolute;
@@ -79,7 +80,7 @@ body {
           background-color: var(--Primary);
           width: 0.5rem;
           transform: scaleY(0);
-          transition: transform 0.3s, width 0.4s 0.3s;
+          transition: transform 0.3s, width 0.4s cubic-bezier(0.3, 1.23, 1, -0.55) 0.3s;
           z-index: 10; }
         .container_main--sidebar .side-nav--item:hover::before {
           transform: scaleY(1);
@@ -95,7 +96,8 @@ body {
       .container_main--body .gallary {
         display: flex; }
         .container_main--body .gallary-photo {
-          width: 33.3%; }
+          width: 33.33%;
+          height: 100%; }
 
 .search {
   display: flex;
